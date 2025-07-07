@@ -21,7 +21,7 @@ public class question912 {
 	            case 'O':
 	                System.out.println("Orange");
 	                break;
-	            case 'Y':
+	            case 'Y':`
 	                System.out.println("Yellow");
 	                break;
 	            case 'W':
