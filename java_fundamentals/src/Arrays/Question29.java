@@ -1,10 +1,12 @@
 package Arrays;
 import java.util.*;
-public class Question28 {
+public class Question29 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+	
+				
+				
 				        Scanner sc = new Scanner(System.in);
 				        System.out.println("Enter size of array:");
 				        int n = sc.nextInt();
@@ -14,22 +16,20 @@ public class Question28 {
 				        for (int i = 0; i < n; i++)
 				            arr[i] = sc.nextInt();
 
-				        int sum = 0;
-				        boolean skip = false;
+				        int[] result = new int[n];
+				        int index = 0;
 
-				        for (int num : arr) {
-				            if (num == 6) {
-				                skip = true;
-				            } else if (num == 7 && skip) {
-				                skip = false;
-				            } else if (!skip) {
-				                sum += num;
+				        for (int i = 0; i < n; i++) {
+				            if (arr[i] != 10) {
+				                result[index++] = arr[i];
 				            }
 				        }
 
-				        System.out.println("Sum: " + sum);
+				        System.out.println("Output after removing 10s:");
+				        for (int val : result)
+				            System.out.print(val + " ");
 				    
+				
+	}
 
-			}
-
-		}
+}

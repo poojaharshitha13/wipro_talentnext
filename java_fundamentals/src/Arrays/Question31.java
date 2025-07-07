@@ -1,6 +1,6 @@
 package Arrays;
 import java.util.*;
-public class Question28 {
+public class Question31 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,22 +14,17 @@ public class Question28 {
 				        for (int i = 0; i < n; i++)
 				            arr[i] = sc.nextInt();
 
-				        int sum = 0;
-				        boolean skip = false;
+				        boolean isValid = true;
 
-				        for (int num : arr) {
-				            if (num == 6) {
-				                skip = true;
-				            } else if (num == 7 && skip) {
-				                skip = false;
-				            } else if (!skip) {
-				                sum += num;
+				        for (int i = 0; i < n; i++) {
+				            if (arr[i] != 1 && arr[i] != 4) {
+				                isValid = false;
+				                break;
 				            }
 				        }
 
-				        System.out.println("Sum: " + sum);
+				        System.out.println("Only 1s and 4s? " + isValid);
 				    
+	}
 
-			}
-
-		}
+}
