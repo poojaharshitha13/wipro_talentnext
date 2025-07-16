@@ -1,0 +1,48 @@
+package com.example.io;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class CharCounterFromFile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in); // For user input
+
+        try {
+            // 🔸 Get file name from user
+            System.out.print("Enter the file name: ");
+            String fileName = sc.nextLine(); // e.g., Input.txt
+
+            // 🔸 Get character to be counted
+            System.out.print("Enter the character to be counted: ");
+            char ch = sc.nextLine().toLowerCase().charAt(0); // Convert to lowercase for case-insensitive check
+
+            // 🔸 Initialize the counter
+            int count = 0;
+
+            // 🔸 Read the file using BufferedReader
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            String line;
+
+            // 🔸 Loop through each line of the file
+            while ((line = reader.readLine()) != null) {
+                line = line.toLowerCase(); // Convert entire line to lowercase
+
+                // 🔸 Loop through each character in the line
+                for (int i = 0; i < line.length(); i++) {
+                    if (line.charAt(i) == ch) {
+                        count++; // Increase count if character matches
+                    }
+                }
+            }
+
+            reader.close(); // Always close the file after reading
+
+            // 🔸 Print the result
+            System.out.println("File '" + fileName + "' has " + count + " instances of letter '" + ch + "'.");
+
+        } catch (IOException e) {
+            // 🔸 Handle file not found or read errors
+            System.out.println("Error reading the file: " + e.getMessage());
+        }
+    }
+}
